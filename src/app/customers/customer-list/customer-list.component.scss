@@ -1,0 +1,36 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: black;
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.btn-content {
+    button {
+        @include transform(rotate(30deg));
+    }
+}
+
+ul {
+    li {
+        color: $primary-color;
+    }
+}
+
+.box { @include transform(rotate(30deg)); }
+
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.message.container {
+  width: 600px / 960px * 100%;
+}
